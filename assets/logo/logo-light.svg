@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <style>
+      .logo-text-top {
+        font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        fill: #FFFFFF;
+        letter-spacing: 3px;
+      }
+      .logo-text-main {
+        font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        fill: #FFFFFF;
+        letter-spacing: 1px;
+      }
+      .logo-text-sub {
+        font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+        font-size: 7.5px;
+        font-weight: 700;
+        fill: #FFFFFF;
+        letter-spacing: 1.2px;
+      }
+      .logo-since {
+        font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+        font-size: 6px;
+        font-weight: 600;
+        fill: #F2F2F2;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </defs>
+  
+  <!-- Icon Group -->
+  <g transform="translate(5, 5)">
+    <!-- White Outer Circle -->
+    <circle cx="35" cy="35" r="32" fill="none" stroke="#FFFFFF" stroke-width="4.5" />
+    
+    <!-- Yellow Inner Lightning Bolt -->
+    <path d="M 37 12 L 23 41 H 34 L 29 61 L 51 30 H 40 Z" fill="#F2B705" />
+  </g>
+  
+  <!-- Text Group -->
+  <g transform="translate(85, 0)">
+    <!-- Since 1997 -->
+    <text x="145" y="16" class="logo-since">DESDE 1997</text>
+    
+    <!-- ELÉTRICA -->
+    <text x="0" y="28" class="logo-text-top">ELÉTRICA</text>
+    
+    <!-- SABIÁ -->
+    <text x="0" y="58" class="logo-text-main">SABIÁ</text>
+    
+    <!-- INSTALAÇÃO E MANUTENÇÃO ELÉTRICA -->
+    <text x="0" y="71" class="logo-text-sub">INSTALAÇÃO E MANUTENÇÃO ELÉTRICA</text>
+  </g>
+</svg>
