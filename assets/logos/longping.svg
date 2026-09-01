@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <g transform="translate(10, 10)">
+    <!-- Longping Circle Icon -->
+    <path d="M 30 2 C 14.5 2 2 14.5 2 30 C 2 45.5 14.5 58 30 58 C 41 58 50.5 51.5 55 42 C 45 48 32 46 25 38 C 18 30 18 17 26 8 C 21 4 16 2 30 2 Z" fill="#008040"/>
+    <circle cx="34" cy="22" r="7" fill="#F39200"/>
+    <path d="M 22 40 C 27 48 37 50 46 45 C 38 43 32 37 30 28 C 25 32 22 36 22 40 Z" fill="#78BE20"/>
+  </g>
+
+  <!-- Text -->
+  <g transform="translate(80, 18)">
+    <text x="0" y="22" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="21" fill="#0D1B2A" letter-spacing="0.5">LONGPING</text>
+    <text x="0" y="42" font-family="'Montserrat', sans-serif" font-weight="800" font-size="18" fill="#0D1B2A" letter-spacing="1">HIGH-TECH</text>
+    <text x="0" y="55" font-family="'Montserrat', sans-serif" font-weight="700" font-size="9" fill="#555555" letter-spacing="2">CITIC GROUP</text>
+  </g>
+</svg>

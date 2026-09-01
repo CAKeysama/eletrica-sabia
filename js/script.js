@@ -12,38 +12,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * 1. Header Scroll Effect
- * Adds a visual shadow and shrinks header height when scrolled
+ * Shrinks header height and adds box-shadow when scrolling down
  */
 function initHeaderScroll() {
   const header = document.querySelector('.header');
+  if (!header) return;
   
   const handleScroll = () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
   };
   
-  // Initial check on load
   handleScroll();
-  window.addEventListener('scroll', handleScroll);
+  window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 /**
  * 2. Mobile Menu Toggle
- * Opens and closes the slide-over menu drawer on mobile devices
+ * Opens and closes mobile drawer menu
  */
 function initMobileMenu() {
   const menuToggle = document.getElementById('menuToggle');
   const nav = document.getElementById('nav');
+  if (!menuToggle || !nav) return;
+
   const navLinks = document.querySelectorAll('.nav-link, .nav .btn');
   
   const toggleMenu = () => {
     menuToggle.classList.toggle('active');
     nav.classList.toggle('active');
-    
-    // Toggle aria-expanded for screen readers
     const isExpanded = menuToggle.classList.contains('active');
     menuToggle.setAttribute('aria-expanded', isExpanded);
   };
@@ -56,12 +56,10 @@ function initMobileMenu() {
   
   menuToggle.addEventListener('click', toggleMenu);
   
-  // Close menu when clicking nav links or CTA button
   navLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
   
-  // Close menu when clicking outside of it
   document.addEventListener('click', (event) => {
     const isClickInsideMenu = nav.contains(event.target);
     const isClickToggle = menuToggle.contains(event.target);
@@ -74,15 +72,16 @@ function initMobileMenu() {
 
 /**
  * 3. Active Nav Link on Scroll
- * Highlights the current active section in the header navigation
+ * Dynamically highlights active menu item based on current section viewport position
  */
 function initActiveNavLink() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
+  if (!sections.length || !navLinks.length) return;
   
   window.addEventListener('scroll', () => {
     let currentSectionId = '';
-    const scrollPosition = window.scrollY + 120; // offset header height + margin
+    const scrollPosition = window.scrollY + 130;
     
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -99,28 +98,28 @@ function initActiveNavLink() {
         link.classList.add('active');
       }
     });
-  });
+  }, { passive: true });
 }
 
 /**
  * 4. Scroll Reveal Animations
- * Uses Intersection Observer to fade in and slide up elements as they scroll into view
+ * Uses Intersection Observer for modern fade-in effect on sections
  */
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
+  if (!revealElements.length) return;
   
   if ('IntersectionObserver' in window) {
     const observerOptions = {
-      root: null, // viewport
-      threshold: 0.15, // trigger when 15% visible
-      rootMargin: '0px 0px -50px 0px' // adjust activation point
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // stop observing once element is visible
           observer.unobserve(entry.target);
         }
       });
@@ -130,7 +129,6 @@ function initScrollReveal() {
       observer.observe(element);
     });
   } else {
-    // Fallback if browser doesn't support IntersectionObserver
     revealElements.forEach(element => {
       element.classList.add('visible');
     });
@@ -138,20 +136,19 @@ function initScrollReveal() {
 }
 
 /**
- * 5. Contact Form Validation & WhatsApp Redirection
- * Validates fields on submit and constructs the dynamic WhatsApp text message URL
+ * 5. Contact Form Validation & Dynamic WhatsApp Message Redirection
  */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
   
-  // Pre-select service when clicking on service card links
-  const serviceLinks = document.querySelectorAll('.service-link');
+  // Pre-select service when clicking service CTA buttons
+  const serviceCtaButtons = document.querySelectorAll('.service-card .service-btn');
   const serviceSelect = document.getElementById('formService');
   
-  serviceLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      const selectedService = link.getAttribute('data-service');
+  serviceCtaButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedService = btn.getAttribute('data-service');
       if (selectedService && serviceSelect) {
         serviceSelect.value = selectedService;
       }
@@ -161,30 +158,29 @@ function initContactForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Retrieve fields
     const nameInput = document.getElementById('formName');
     const phoneInput = document.getElementById('formPhone');
     const emailInput = document.getElementById('formEmail');
     const companyInput = document.getElementById('formCompany');
+    const serviceSelect = document.getElementById('formService');
     const messageInput = document.getElementById('formMessage');
     
-    // Field cleaning
-    const name = nameInput.value.trim();
-    const phone = phoneInput.value.trim();
-    const email = emailInput.value.trim();
-    const company = companyInput.value.trim();
-    const service = serviceSelect.value;
-    const message = messageInput.value.trim();
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    const company = companyInput ? companyInput.value.trim() : '';
+    const service = serviceSelect ? serviceSelect.value : '';
+    const message = messageInput ? messageInput.value.trim() : '';
     
-    // Validation
+    // Field validations
     if (!name) {
-      alert('Por favor, informe seu nome completo.');
+      alert('Por favor, preencha seu nome.');
       nameInput.focus();
       return;
     }
     
     if (!phone) {
-      alert('Por favor, informe um telefone ou WhatsApp para contato.');
+      alert('Por favor, informe seu telefone ou WhatsApp.');
       phoneInput.focus();
       return;
     }
@@ -194,47 +190,40 @@ function initContactForm() {
       emailInput.focus();
       return;
     }
-    
-    if (service === '') {
+
+    if (!service) {
       alert('Por favor, selecione o serviço de interesse.');
       serviceSelect.focus();
       return;
     }
     
     if (!message) {
-      alert('Por favor, descreva sua mensagem.');
+      alert('Por favor, digite sua mensagem.');
       messageInput.focus();
       return;
     }
     
-    // Build WhatsApp message format
-    let whatsappMsg = 'Olá, Elétrica Sabiá!\n\n';
-    whatsappMsg += `Meu nome é *${name}*.\n`;
-    if (company) {
-      whatsappMsg += `Empresa: *${company}*\n`;
-    }
-    whatsappMsg += `Tenho interesse em: *${service}*.\n\n`;
-    whatsappMsg += `*Telefone:* ${phone}\n`;
-    whatsappMsg += `*E-mail:* ${email}\n\n`;
-    whatsappMsg += `*Mensagem:*\n${message}\n\n`;
-    whatsappMsg += 'Gostaria de receber mais informações.';
+    // Construct exact requested message template
+    let whatsappText = `Olá, Elétrica Sabiá!\n`;
+    whatsappText += `Meu nome é ${name}.\n`;
+    whatsappText += `Tenho interesse em ${service}.\n`;
+    whatsappText += `Empresa: ${company ? company : 'Não informada'}\n`;
+    whatsappText += `Telefone: ${phone}\n`;
+    whatsappText += `E-mail: ${email}\n`;
+    whatsappText += `Mensagem:\n${message}\n\n`;
+    whatsappText += `Gostaria de receber mais informações e solicitar um orçamento.`;
     
-    // Encode text parameters
-    const encodedText = encodeURIComponent(whatsappMsg);
+    const encodedMessage = encodeURIComponent(whatsappText);
+    const companyPhone = '551633847469';
     
-    // WhatsApp number for Elétrica Sabiá: (16) 3384-7469 -> Country 55 + Area 16 + Number 33847469
-    const companyWhatsapp = '551633847469';
-    
-    // Construct official whatsapp URL api
-    const waUrl = `https://api.whatsapp.com/send?phone=${companyWhatsapp}&text=${encodedText}`;
-    
-    // Open in a new tab
+    // Open official WhatsApp window
+    const waUrl = `https://wa.me/${companyPhone}?text=${encodedMessage}`;
     window.open(waUrl, '_blank');
   });
 }
 
 /**
- * Utility: Email validator
+ * Helper: Validate email format
  */
 function validateEmail(email) {
   const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
