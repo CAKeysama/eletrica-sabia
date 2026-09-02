@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initActiveNavLink();
   initScrollReveal();
+  initAnimatedCounters();
+  initServiceFilters();
+  initFaqAccordion();
+  initFormChips();
+  initBackToTop();
   initContactForm();
 });
 
@@ -136,21 +141,210 @@ function initScrollReveal() {
 }
 
 /**
- * 5. Contact Form Validation & Dynamic WhatsApp Message Redirection
+ * 5. Animated Number Counters
+ * Counts up smoothly from 0 to target when scrolled into view
+ */
+function initAnimatedCounters() {
+  const counterElements = document.querySelectorAll('.stat-number[data-target]');
+  if (!counterElements.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800; // ms
+    const startTime = performance.now();
+
+    const updateCount = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Easing: easeOutExpo
+      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const currentVal = Math.floor(easeProgress * target);
+
+      el.textContent = `${prefix}${currentVal}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCount);
+      } else {
+        el.textContent = `${prefix}${target}${suffix}`;
+      }
+    };
+
+    requestAnimationFrame(updateCount);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    counterElements.forEach(el => counterObserver.observe(el));
+  } else {
+    counterElements.forEach(el => animateCounter(el));
+  }
+}
+
+/**
+ * 6. Interactive Service Category Filters
+ * Filters cards with smooth fade/scale transitions
+ */
+function initServiceFilters() {
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const serviceCards = document.querySelectorAll('.services-grid .service-card');
+  if (!filterTabs.length || !serviceCards.length) return;
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active from all tabs
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filterValue = tab.getAttribute('data-filter');
+
+      serviceCards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+
+        if (filterValue === 'all' || cardCategory === filterValue) {
+          card.classList.remove('hidden');
+          // Trigger slight reflow animation
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
+/**
+ * 7. FAQ Accordion Interaction
+ * Smooth expand/collapse with rotating chevron icon
+ */
+function initFaqAccordion() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  if (!faqQuestions.length) return;
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+      const isOpen = question.classList.contains('active');
+
+      // Close all other open FAQ items for clean accordion effect
+      faqQuestions.forEach(q => {
+        if (q !== question) {
+          q.classList.remove('active');
+          if (q.nextElementSibling) {
+            q.nextElementSibling.classList.remove('open');
+            q.nextElementSibling.style.maxHeight = null;
+          }
+        }
+      });
+
+      // Toggle clicked item
+      if (isOpen) {
+        question.classList.remove('active');
+        answer.classList.remove('open');
+        answer.style.maxHeight = null;
+      } else {
+        question.classList.add('active');
+        answer.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 40 + 'px';
+      }
+    });
+  });
+}
+
+/**
+ * 8. Quick Message Chips in Form
+ * Inserts predefined message templates into the message textarea
+ */
+function initFormChips() {
+  const chipButtons = document.querySelectorAll('.chip-btn');
+  const messageInput = document.getElementById('formMessage');
+  if (!chipButtons.length || !messageInput) return;
+
+  chipButtons.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const presetText = chip.getAttribute('data-preset');
+      if (presetText) {
+        // Toggle selected styling
+        chipButtons.forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+
+        messageInput.value = presetText;
+        messageInput.focus();
+
+        // Subtle animation on textarea
+        messageInput.style.borderColor = 'var(--color-sabia-blue)';
+        setTimeout(() => {
+          messageInput.style.borderColor = '';
+        }, 800);
+      }
+    });
+  });
+}
+
+/**
+ * 9. Back to Top Floating Button
+ */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('backToTop');
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/**
+ * 10. Contact Form Validation & Dynamic WhatsApp Message Redirection
  */
 function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
   
-  // Pre-select service when clicking service CTA buttons
-  const serviceCtaButtons = document.querySelectorAll('.service-card .service-btn');
+  // Pre-select service when clicking any service CTA button or link
+  const serviceCtaButtons = document.querySelectorAll('[data-service]');
   const serviceSelect = document.getElementById('formService');
   
   serviceCtaButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selectedService = btn.getAttribute('data-service');
       if (selectedService && serviceSelect) {
-        serviceSelect.value = selectedService;
+        // Find matching option or select by exact value
+        let match = false;
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].value === selectedService) {
+            serviceSelect.selectedIndex = i;
+            match = true;
+            break;
+          }
+        }
+        if (!match) {
+          serviceSelect.value = selectedService;
+        }
       }
     });
   });
@@ -206,7 +400,7 @@ function initContactForm() {
     // Construct exact requested message template
     let whatsappText = `Olá, Elétrica Sabiá!\n`;
     whatsappText += `Meu nome é ${name}.\n`;
-    whatsappText += `Tenho interesse em ${service}.\n`;
+    whatsappText += `Tenho interesse em: ${service}.\n`;
     whatsappText += `Empresa: ${company ? company : 'Não informada'}\n`;
     whatsappText += `Telefone: ${phone}\n`;
     whatsappText += `E-mail: ${email}\n`;

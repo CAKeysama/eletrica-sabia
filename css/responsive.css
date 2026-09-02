@@ -11,6 +11,18 @@
 
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .facilities-intro-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 36px 30px;
+  }
+
+  .munck-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .footer-grid {
@@ -47,6 +59,15 @@
     gap: 24px;
   }
 
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .munck-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .safety-grid {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -81,18 +102,19 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 82%;
+    width: 85%;
     max-width: 320px;
     height: 100vh;
     background-color: var(--color-white);
-    box-shadow: -10px 0 30px rgba(13, 27, 42, 0.2);
+    box-shadow: -10px 0 30px rgba(13, 27, 42, 0.25);
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 100px 32px 40px 32px;
-    gap: 36px;
+    padding: 100px 30px 40px 30px;
+    gap: 32px;
     transition: right var(--transition-slow);
     z-index: 1050;
+    overflow-y: auto;
   }
 
   .nav.active {
@@ -106,7 +128,7 @@
   }
 
   .nav-link {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     display: block;
     width: 100%;
     padding: 10px 0;
@@ -170,6 +192,34 @@
     gap: 20px;
   }
 
+  /* Facilities Mobile */
+  .facilities-intro-card {
+    padding: 28px 20px;
+  }
+
+  .facilities-intro-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Munck Mobile */
+  .munck-features {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .munck-main-img {
+    height: 250px;
+  }
+
+  .munck-thumb-img {
+    height: 120px;
+  }
+
   /* Clients Mobile */
   .clients-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -210,10 +260,42 @@
     grid-column: span 1;
   }
 
-  /* Footer Mobile */
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  /* FAQ Mobile */
+  .faq-question {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+
+  .faq-answer.open {
+    padding: 16px 20px;
+  }
+
+  /* Filter Tabs Mobile */
+  .service-filter-tabs {
+    border-radius: 20px;
+    padding: 6px;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .filter-tab {
+    font-size: 0.775rem;
+    padding: 6px 12px;
+  }
+
+  /* Form Chips Mobile */
+  .chip-btn {
+    font-size: 0.725rem;
+    padding: 5px 10px;
+  }
+
+  /* Back to Top Mobile */
+  .back-to-top {
+    bottom: 20px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
   }
 }
 
@@ -221,6 +303,19 @@
 @media (max-width: 480px) {
   .section {
     padding: 60px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.95rem;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .facilities-intro-card {
+    padding: 24px 16px;
   }
 
   .clients-grid {
@@ -233,5 +328,13 @@
     width: 52px;
     height: 52px;
     font-size: 28px;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    left: 16px;
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
   }
 }
