@@ -1,340 +1,594 @@
 /* ==========================================================================
-   ELÉTRICA SABIÁ - RESPONSIVE STYLESHEET
+   ELÉTRICA SABIÁ - RESPONSIVE STYLESHEET (MOBILE-FIRST)
    ========================================================================== */
 
-/* --- Desktop & Laptop Adjustments (Max-width: 1200px) --- */
-@media (max-width: 1200px) {
-  .hero-trust-bar {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+/* --- Base: Mobile First (up to 480px) --- */
+.container {
+  padding: 0 18px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.header {
+  height: 80px;
+}
+
+.header.scrolled {
+  height: 70px;
+}
+
+.menu-toggle {
+  display: block;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(85vw, 320px);
+  height: 100vh;
+  background-color: var(--color-white);
+  box-shadow: -10px 0 30px rgba(13, 27, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 100px 24px 40px 24px;
+  gap: 28px;
+  transform: translateX(calc(100% + 24px));
+  transition: transform var(--transition-slow);
+  z-index: 1050;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.nav.active {
+  transform: translateX(0);
+}
+
+.nav-list {
+  flex-direction: column;
+  width: 100%;
+  gap: 14px;
+}
+
+.nav-link {
+  font-size: 1.05rem;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.nav .btn {
+  width: 100%;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.hero {
+  min-height: auto;
+  min-height: 100svh;
+  padding-top: 122px;
+  padding-bottom: 60px;
+}
+
+.hero h1 {
+  font-size: 1.95rem;
+}
+
+.hero-badge {
+  font-size: 0.75rem;
+  padding: 6px 14px;
+}
+
+.hero-actions {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-actions .btn {
+  width: 100%;
+}
+
+.hero-trust-bar {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.about-grid {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.about-image {
+  height: 360px;
+}
+
+.about-floating-card {
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  padding: 16px 18px;
+}
+
+.stats-grid {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.services-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.facilities-intro-card {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 24px 16px;
+}
+
+.facilities-intro-text h3 {
+  font-size: 1.35rem;
+}
+
+.facilities-grid {
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.munck-grid {
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.munck-features {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.munck-secondary-images {
+  grid-template-columns: 1fr;
+}
+
+.munck-main-img {
+  height: 250px;
+}
+
+.munck-thumb-img {
+  height: 140px;
+}
+
+.safety-grid {
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.clients-grid {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.client-card {
+  height: 120px;
+  padding: 20px 16px;
+}
+
+.client-logo {
+  max-width: 130px;
+  max-height: 45px;
+}
+
+.cta-container {
+  flex-direction: column;
+  text-align: center;
+  gap: 24px;
+}
+
+.cta-buttons {
+  flex-direction: column;
+  width: 100%;
+}
+
+.cta-buttons .btn {
+  width: 100%;
+}
+
+.contact-grid {
+  grid-template-columns: 1fr;
+  gap: 42px;
+}
+
+.contact-intro {
+  font-size: 1rem;
+}
+
+.contact-card-item {
+  padding: 18px;
+}
+
+.contact-card-content {
+  min-width: 0;
+}
+
+.contact-card-content a,
+.contact-card-content p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.social-bar {
+  flex-wrap: wrap;
+}
+
+.form-card {
+  padding: 28px 16px;
+}
+
+.form-card h3 {
+  font-size: 2rem;
+}
+
+.contact-form {
+  grid-template-columns: 1fr;
+}
+
+.form-group.full-width,
+.form-submit-wrapper,
+.form-chips-wrapper {
+  grid-column: span 1;
+}
+
+.form-submit-wrapper .btn-whatsapp {
+  width: 100%;
+  white-space: normal;
+  line-height: 1.35;
+  padding: 14px 12px;
+}
+
+.faq-question {
+  padding: 18px 18px;
+  font-size: 0.95rem;
+}
+
+.faq-answer {
+  padding: 0 18px;
+}
+
+.faq-answer.open {
+  padding: 16px 18px;
+}
+
+.service-filter-wrapper {
+  overflow-x: auto;
+}
+
+.service-filter-tabs {
+  width: 100%;
+  justify-content: flex-start;
+  border-radius: 20px;
+  padding: 6px;
+  gap: 6px;
+}
+
+.filter-tab {
+  font-size: 0.775rem;
+  padding: 6px 12px;
+}
+
+.chip-btn {
+  font-size: 0.725rem;
+  padding: 5px 10px;
+}
+
+.footer {
+  padding-top: 64px;
+}
+
+.footer-grid {
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 44px;
+}
+
+.footer-bottom p {
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.whatsapp-float {
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  right: calc(20px + env(safe-area-inset-right));
+  width: 52px;
+  height: 52px;
+  font-size: 28px;
+}
+
+.back-to-top {
+  bottom: calc(20px + env(safe-area-inset-bottom));
+  left: calc(16px + env(safe-area-inset-left));
+  width: 42px;
+  height: 42px;
+  font-size: 15px;
+}
+
+/* --- Very small phones --- */
+@media (max-width: 375px) {
+  .hero h1 {
+    font-size: 1.8rem;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .hero-badge {
+    letter-spacing: 0.8px;
   }
 
-  .facilities-intro-card {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 36px 30px;
+  .filter-tab {
+    padding: 6px 10px;
   }
 
-  .munck-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+  .faq-question {
+    font-size: 0.875rem;
   }
 }
 
-/* --- Tablet Devices (Max-width: 1024px) --- */
-@media (max-width: 1024px) {
+/* --- Small tablets / large phones --- */
+@media (min-width: 481px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .munck-secondary-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --- Tablets and up --- */
+@media (min-width: 769px) {
+  .container {
+    padding: 0 24px;
+  }
+
   .section {
     padding: 80px 0;
   }
 
+  .menu-toggle {
+    display: none;
+  }
+
   .header {
-    height: 80px;
+    height: 90px;
   }
 
   .header.scrolled {
-    height: 70px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .about-image {
-    height: 400px;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .facilities-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .munck-features {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .safety-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .clients-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .cta-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .cta-buttons {
-    justify-content: center;
-  }
-
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-}
-
-/* --- Mobile Devices (Max-width: 768px) --- */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+    height: 76px;
   }
 
   .nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 85%;
-    max-width: 320px;
-    height: 100vh;
-    background-color: var(--color-white);
-    box-shadow: -10px 0 30px rgba(13, 27, 42, 0.25);
-    flex-direction: column;
-    align-items: flex-start;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+    flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
-    padding: 100px 30px 40px 30px;
-    gap: 32px;
-    transition: right var(--transition-slow);
-    z-index: 1050;
-    overflow-y: auto;
-  }
-
-  .nav.active {
-    right: 0;
+    padding: 0;
+    gap: 28px;
+    transform: none;
+    overflow: visible;
+    z-index: auto;
   }
 
   .nav-list {
-    flex-direction: column;
-    width: 100%;
-    gap: 16px;
+    flex-direction: row;
+    width: auto;
+    gap: 20px;
   }
 
   .nav-link {
-    font-size: 1.1rem;
-    display: block;
-    width: 100%;
-    padding: 10px 0;
+    font-size: 0.875rem;
+    width: auto;
+    padding: 8px 0;
   }
 
   .nav .btn {
-    width: 100%;
+    width: auto;
   }
 
-  /* Hamburger toggle animation */
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Hero Mobile */
   .hero {
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: 100dvh;
     padding-top: 130px;
-    padding-bottom: 70px;
+    padding-bottom: 72px;
   }
 
   .hero-actions {
-    flex-direction: column;
-    gap: 12px;
+    flex-direction: row;
   }
 
   .hero-actions .btn {
-    width: 100%;
+    width: auto;
   }
 
   .hero-trust-bar {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* About Floating Badge */
-  .about-floating-card {
-    bottom: -16px;
-    left: 16px;
-    right: 16px;
-    padding: 16px 20px;
-  }
-
-  /* Stats Grid */
-  .stats-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Services Mobile */
   .services-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* Facilities Mobile */
-  .facilities-intro-card {
-    padding: 28px 20px;
-  }
-
-  .facilities-intro-text h3 {
-    font-size: 1.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 
   .facilities-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 
-  /* Munck Mobile */
   .munck-features {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .munck-main-img {
-    height: 250px;
-  }
-
-  .munck-thumb-img {
-    height: 120px;
-  }
-
-  /* Clients Mobile */
-  .clients-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .client-card {
-    height: 120px;
-    padding: 20px 16px;
-  }
-
-  .client-logo {
-    max-width: 130px;
-    max-height: 45px;
-  }
-
-  /* CTA Buttons */
   .cta-buttons {
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    width: auto;
   }
 
   .cta-buttons .btn {
-    width: 100%;
+    width: auto;
   }
 
-  /* Form Grid */
   .form-card {
     padding: 30px 20px;
   }
 
-  .contact-form {
-    grid-template-columns: 1fr;
-  }
-
-  .form-group.full-width,
-  .form-submit-wrapper {
-    grid-column: span 1;
-  }
-
-  /* FAQ Mobile */
   .faq-question {
     padding: 18px 20px;
-    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    padding: 0 20px;
   }
 
   .faq-answer.open {
     padding: 16px 20px;
   }
 
-  /* Filter Tabs Mobile */
-  .service-filter-tabs {
-    border-radius: 20px;
-    padding: 6px;
-    gap: 6px;
-    width: 100%;
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
   }
 
-  .filter-tab {
-    font-size: 0.775rem;
-    padding: 6px 12px;
-  }
-
-  /* Form Chips Mobile */
-  .chip-btn {
-    font-size: 0.725rem;
-    padding: 5px 10px;
-  }
-
-  /* Back to Top Mobile */
   .back-to-top {
-    bottom: 20px;
-    left: 20px;
+    bottom: calc(20px + env(safe-area-inset-bottom));
+    left: calc(20px + env(safe-area-inset-left));
     width: 44px;
     height: 44px;
     font-size: 16px;
   }
 }
 
-/* --- Small Mobile Devices (Max-width: 480px) --- */
-@media (max-width: 480px) {
+/* --- Large tablets and small desktops --- */
+@media (min-width: 901px) {
+  .facilities-intro-card {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+    padding: 36px 30px;
+  }
+}
+
+/* --- Laptops --- */
+@media (min-width: 1025px) {
+  .about-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 60px;
+  }
+
+  .about-image {
+    height: 490px;
+  }
+
+  .safety-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .cta-container {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1.25fr;
+    gap: 60px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .form-group.full-width,
+  .form-submit-wrapper,
+  .form-chips-wrapper {
+    grid-column: span 2;
+  }
+
+  .form-submit-wrapper .btn-whatsapp {
+    white-space: nowrap;
+    padding: 16px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --- Desktop --- */
+@media (min-width: 1201px) {
   .section {
-    padding: 60px 0;
-  }
-
-  .hero h1 {
-    font-size: 1.95rem;
-  }
-
-  .hero-badge {
-    font-size: 0.75rem;
-    padding: 6px 14px;
+    padding: 100px 0;
   }
 
   .facilities-intro-card {
-    padding: 24px 16px;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 40px;
+    padding: 48px 44px;
   }
 
-  .clients-grid {
-    grid-template-columns: 1fr;
+  .munck-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+  }
+
+  .form-card {
+    padding: 44px 36px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.3fr 1fr 1.2fr 1.2fr;
   }
 
   .whatsapp-float {
-    bottom: 20px;
-    right: 20px;
-    width: 52px;
-    height: 52px;
-    font-size: 28px;
+    bottom: calc(28px + env(safe-area-inset-bottom));
+    right: calc(28px + env(safe-area-inset-right));
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
   }
 
   .back-to-top {
-    bottom: 20px;
-    left: 16px;
-    width: 42px;
-    height: 42px;
-    font-size: 15px;
+    bottom: calc(28px + env(safe-area-inset-bottom));
+    left: calc(28px + env(safe-area-inset-left));
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
   }
 }
