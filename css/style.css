@@ -992,6 +992,7 @@ p {
   margin-bottom: 1.5rem;
 }
 
+
 .munck-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -999,6 +1000,7 @@ p {
   margin-top: 2rem;
   margin-bottom: 2.25rem;
 }
+
 
 .munck-feature-box {
   background-color: var(--color-white);
