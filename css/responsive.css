@@ -19,6 +19,12 @@
   height: 70px;
 }
 
+.logo-img,
+.header.scrolled .logo-img {
+  width: min(190px, calc(100vw - 86px));
+  max-width: calc(100vw - 86px);
+}
+
 .menu-toggle {
   display: block;
 }

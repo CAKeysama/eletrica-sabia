@@ -34,13 +34,16 @@
 }
 
 .logo-img {
-  height: 54px;
-  width: auto;
-  transition: height var(--transition-normal);
+  width: clamp(180px, 22vw, 230px);
+  height: auto;
+  max-width: calc(100vw - 80px);
+  display: block;
+  object-fit: contain;
+  transition: width var(--transition-normal);
 }
 
 .header.scrolled .logo-img {
-  height: 46px;
+  width: clamp(165px, 20vw, 205px);
 }
 
 .nav {
@@ -241,4 +244,3 @@
   margin-bottom: 0;
   line-height: 1.3;
 }
-

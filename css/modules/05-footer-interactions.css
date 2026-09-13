@@ -14,7 +14,13 @@
 }
 
 .footer-brand .logo-img {
-  height: 52px;
+  width: min(230px, 100%);
+  height: auto;
+  display: block;
+  object-fit: contain;
+  padding: 8px 12px;
+  background-color: var(--color-white);
+  border-radius: 6px;
   margin-bottom: 20px;
 }
 
