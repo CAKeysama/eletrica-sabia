@@ -29,24 +29,18 @@ Nada no visual ou nas funcionalidades foi alterado (comparação de capturas ant
 
 ## Próximas etapas, por prioridade
 
-### Prioridade 1: depende do Gustavo (maior impacto em busca local)
+### Prioridade 1: depende do Gustavo
 1. **Confirmar o domínio de produção** (se não for `https://eletricasabia.com.br/`, trocar em `index.html`, `robots.txt` e `sitemap.xml`).
-2. **Perfil da Empresa no Google (Google Business Profile)**: criar ou reivindicar em business.google.com com exatamente o mesmo nome, endereço e telefone do site (NAP). Categoria principal "Eletricista"; secundárias "Empresa de manutenção predial", "Serviço de ar-condicionado", "Serviço de guindaste". Adicionar fotos reais, horário, área de atendimento e o link do site. É o fator nº 1 para aparecer no mapa ("eletricista em Matão").
-3. **Google Search Console**: adicionar a propriedade (de preferência "Domínio", verificada por DNS), enviar `sitemap.xml` e pedir indexação da página inicial.
-4. **Confirmar as cidades atendidas** listadas no JSON-LD (Matão, Araraquara, São Carlos, Américo Brasiliense, Taquaritinga, Itápolis, Ibitinga, Dobrada, Santa Ernestina, Gavião Peixoto, Nova Europa, Motuca) e o **horário de funcionamento** (para incluir no schema).
-5. **Avaliações no Google**: pedir a clientes atuais que avaliem o perfil.
-6. **Citações locais**: cadastrar o mesmo NAP em diretórios (Apontador, Guia Mais, TeleListas, Facebook, LinkedIn da empresa, associação comercial de Matão).
+2. **Google Search Console**: adicionar a propriedade (de preferência "Domínio", verificada por DNS), enviar `sitemap.xml` e pedir indexação da página inicial.
+3. **Confirmar as cidades atendidas** listadas no JSON-LD (Matão, Araraquara, São Carlos, Américo Brasiliense, Taquaritinga, Itápolis, Ibitinga, Dobrada, Santa Ernestina, Gavião Peixoto, Nova Europa, Motuca) e o **horário de funcionamento** (para incluir no schema).
+4. **Perfil da Empresa no Google**: gerenciado pela própria Elétrica Sabiá. Só é importante que nome, endereço e telefone sejam idênticos aos do site e que o perfil aponte para o site.
 
-### Prioridade 2: conteúdo (próximo PR, se aprovado)
-Hoje tudo está em uma única página, o que limita o ranqueamento para buscas específicas. Recomendo criar páginas dedicadas, com texto próprio, fotos e FAQ:
-- `/instalacoes-eletricas-industriais-matao-sp/`
-- `/manutencao-eletrica-industrial/` (inclui SPDA, subestações, banco de capacitores)
-- `/manutencao-predial-facilities/`
-- `/ar-condicionado-pmoc/`
-- `/caminhao-munck-matao-sp/`
-- (opcional) páginas por cidade só se houver conteúdo real (obras atendidas, clientes da cidade)
-
-Outros ajustes de conteúdo: incluir "Matão-SP" no `h1` ou subtítulo do topo, uma seção curta de "Cidades atendidas" e um portfólio de obras com fotos.
+### Prioridade 2: conteúdo dentro da página única (SPA, sem novas páginas)
+O contrato prevê uma SPA, então todo o conteúdo fica em `index.html`. Ainda dá para ganhar relevância:
+- Incluir "Matão-SP" no `h1` ou no subtítulo do topo.
+- Enriquecer cada seção de serviço (elétrica, facilities, ar condicionado/PMOC, Munck) com um parágrafo mais completo e termos que o cliente usa na busca.
+- Uma seção curta de "Cidades atendidas" e um portfólio de obras com fotos e legendas.
+- Mais perguntas no FAQ (ex.: preço/locação de Munck, PMOC obrigatório, laudo de SPDA), que também entram no JSON-LD.
 
 ### Prioridade 3: monitoramento
 - Search Console: acompanhar impressões, cliques e posição para "eletricista Matão", "caminhão munck Matão", "manutenção predial Araraquara" etc.
