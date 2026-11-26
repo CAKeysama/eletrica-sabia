@@ -1,0 +1,6 @@
+# Elétrica Sabiá - robots.txt
+User-agent: *
+Allow: /
+Disallow: /docs/
+
+Sitemap: https://eletricasabia.com.br/sitemap.xml

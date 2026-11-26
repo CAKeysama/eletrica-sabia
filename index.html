@@ -5,34 +5,406 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Elétrica Sabiá | Instalações Elétricas, Facilities & Caminhão Munck - Matão, SP</title>
-  <meta name="description" content="Desde 1997, a Elétrica Sabiá oferece excelência em engenharia elétrica industrial e comercial, serviços de Facilities com foco em Hard Services e operações com caminhão Munck em Matão/SP e região.">
-  <meta name="keywords" content="Elétrica Sabiá, instalações elétricas, facilities, hard services, manutenção predial, ar condicionado, caminhão munck, automação industrial, redes de dados, SPDA, subestações, banco de capacitores, média tensão, alta tensão, Matão SP">
+  <title>Elétrica Sabiá | Instalações Elétricas e Caminhão Munck em Matão-SP</title>
+  <meta name="description" content="Instalação e manutenção elétrica industrial e comercial em Matão-SP desde 1997. Manutenção predial, ar condicionado (PMOC) e caminhão Munck. Peça orçamento.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="author" content="Elétrica Sabiá">
-  
-  <!-- Open Graph Meta Tags (SEO) -->
-  <meta property="og:title" content="Elétrica Sabiá | Instalações Elétricas, Facilities & Caminhão Munck - Matão, SP">
-  <meta property="og:description" content="Mais de 25 anos de tradição em engenharia elétrica industrial e comercial, agora também com soluções integradas em Facilities (Hard Services) e caminhão Munck.">
-  <meta property="og:image" content="assets/images/hero-bg.png">
+  <meta name="theme-color" content="#0056B3">
+  <!-- Domínio de produção: se for diferente, troque em canonical, og:url, og:image, JSON-LD, robots.txt e sitemap.xml -->
+  <link rel="canonical" href="https://eletricasabia.com.br/">
+  <link rel="alternate" hreflang="pt-BR" href="https://eletricasabia.com.br/">
+
+  <!-- SEO Local (geo) -->
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Matão">
+
+  <!-- Open Graph / Redes sociais -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logo/logo.png">
-  
-  <!-- Google Fonts -->
+  <meta property="og:site_name" content="Elétrica Sabiá">
+  <meta property="og:url" content="https://eletricasabia.com.br/">
+  <meta property="og:title" content="Elétrica Sabiá | Instalações Elétricas, Facilities e Caminhão Munck em Matão-SP">
+  <meta property="og:description" content="Desde 1997 em Matão-SP: instalações e manutenções elétricas industriais, manutenção predial, ar condicionado e serviços com caminhão Munck para Matão e região.">
+  <meta property="og:image" content="https://eletricasabia.com.br/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Caminhão Munck da Elétrica Sabiá com cesto aéreo em serviço de rede elétrica">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elétrica Sabiá | Instalações Elétricas e Caminhão Munck em Matão-SP">
+  <meta name="twitter:description" content="Instalações e manutenção elétrica, facilities, ar condicionado e caminhão Munck em Matão-SP e região desde 1997.">
+  <meta name="twitter:image" content="https://eletricasabia.com.br/assets/images/og-image.jpg">
+
+  <!-- Favicon / Ícones -->
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/logo/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/icon-180.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Performance: conexões antecipadas e imagem principal -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" as="image" href="assets/logo/logo.webp" type="image/webp">
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Font Awesome Icons (carregamento não bloqueante) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+
+  <!-- Stylesheets (módulos carregados em paralelo, sem cascata de @import) -->
+  <link rel="stylesheet" href="css/modules/01-base.css">
+  <link rel="stylesheet" href="css/modules/02-header-hero.css">
+  <link rel="stylesheet" href="css/modules/03-about-services.css">
+  <link rel="stylesheet" href="css/modules/04-safety-contact.css">
+  <link rel="stylesheet" href="css/modules/05-footer-interactions.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Dados estruturados (Schema.org) para Google: empresa local, serviços e FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://eletricasabia.com.br/#site",
+        "url": "https://eletricasabia.com.br/",
+        "name": "Elétrica Sabiá",
+        "inLanguage": "pt-BR",
+        "publisher": {
+          "@id": "https://eletricasabia.com.br/#empresa"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://eletricasabia.com.br/#pagina",
+        "url": "https://eletricasabia.com.br/",
+        "name": "Elétrica Sabiá | Instalações Elétricas e Caminhão Munck em Matão-SP",
+        "isPartOf": {
+          "@id": "https://eletricasabia.com.br/#site"
+        },
+        "about": {
+          "@id": "https://eletricasabia.com.br/#empresa"
+        },
+        "inLanguage": "pt-BR"
+      },
+      {
+        "@type": [
+          "Electrician",
+          "HVACBusiness"
+        ],
+        "@id": "https://eletricasabia.com.br/#empresa",
+        "name": "Elétrica Sabiá",
+        "legalName": "SABIÁ INSTALAÇÃO E MANUTENÇÃO ELÉTRICA LTDA.",
+        "taxID": "02.271.572/0001-30",
+        "description": "Empresa de Matão-SP, fundada em 1997, especializada em instalações e manutenções elétricas industriais e comerciais, Facilities (Hard Services: manutenção predial, ar condicionado/PMOC, infraestrutura) e serviços com caminhão Munck.",
+        "url": "https://eletricasabia.com.br/",
+        "logo": "https://eletricasabia.com.br/assets/logo/logo.png",
+        "image": [
+          "https://eletricasabia.com.br/assets/images/og-image.jpg",
+          "https://eletricasabia.com.br/assets/images/equipe_2.jpeg"
+        ],
+        "telephone": "+55-16-3384-7469",
+        "email": "eletricasabia@eletricasabia.com.br",
+        "foundingDate": "1997",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Avenida José Schiavetto, 180",
+          "addressLocality": "Matão",
+          "addressRegion": "SP",
+          "postalCode": "15991-416",
+          "addressCountry": "BR"
+        },
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Avenida+Jos%C3%A9+Schiavetto%2C+180%2C+Mat%C3%A3o+-+SP%2C+15991-416",
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Matão, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Araraquara, SP"
+          },
+          {
+            "@type": "City",
+            "name": "São Carlos, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Américo Brasiliense, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Taquaritinga, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Itápolis, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Ibitinga, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Dobrada, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Santa Ernestina, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Gavião Peixoto, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Nova Europa, SP"
+          },
+          {
+            "@type": "City",
+            "name": "Motuca, SP"
+          },
+          {
+            "@type": "State",
+            "name": "São Paulo"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-16-3384-7469",
+          "contactType": "sales",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese"
+        },
+        "sameAs": [
+          "https://www.facebook.com/S%C3%A1bia-El%C3%A9trica-e-Loca%C3%A7%C3%A3o-de-Guindauto-Mat%C3%A3oSP"
+        ],
+        "knowsAbout": [
+          "Instalações elétricas industriais",
+          "Manutenção elétrica",
+          "SPDA",
+          "Subestações",
+          "Banco de capacitores",
+          "Automação industrial",
+          "Manutenção predial",
+          "Ar condicionado e PMOC",
+          "Caminhão Munck",
+          "Içamento de cargas"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Serviços Elétrica Sabiá",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Serviços Elétricos Industriais e Comerciais",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Instalações Elétricas Industriais e Comerciais",
+                    "description": "Execução completa de instalações e montagem de sistemas elétricos de alto desempenho para indústrias, galpões e edifícios corporativos."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Instalação de Sistemas de Automação Industrial",
+                    "description": "Implantação de sistemas de automação, painéis de controle, PLCs e processos inteligentes para otimização de linhas produtivas."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Instalação de Redes de Dados",
+                    "description": "Montagem de infraestrutura para cabeamento estruturado, fibra óptica e redes de comunicação corporativa de alta velocidade."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sistemas de Proteção contra Descargas Atmosféricas (SPDA)",
+                    "description": "Projeto, laudos, instalação e manutenção de para-raios e malhas de aterramento para proteção patrimonial e humana conforme a NBR 5419."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Instalações de Subestações de Transformação",
+                    "description": "Montagem, infraestrutura civil/eletromecânica, adequações e manutenções periódicas em subestações de transformação de energia."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Banco de Capacitores para Correção de Fator de Potência",
+                    "description": "Dimensionamento, montagem e manutenção de bancos automáticos de capacitores para redução de custos e eliminação de multas na fatura."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Instrumentação e Controle de Processos",
+                    "description": "Instalação, calibração e assistência em sensores, transmissores e instrumentos de medição para processos contínuos industriais."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Manutenção Elétrica Industrial e Comercial",
+                    "description": "Planos preventivos, preditivos e intervenções corretivas emergenciais para garantir a continuidade operacional das instalações."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Manutenção em Sistemas de Baixa, Média e Alta Tensão",
+                    "description": "Corpo técnico especializado em diagnósticos termográficos, testes de isolamento e reparos em redes de baixa, média e alta tensão."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Montagens de Redes Elétricas de Baixa e Média Tensão",
+                    "description": "Construção, expansão e remanejamento de redes elétricas aéreas e subterrâneas com postes, cruzetas, transformadores e cabeamento."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Montagens Eletromecânicas em Geral",
+                    "description": "Estruturação de eletrocalhas, perfilados, leitos para cabos, tubulações industriais e suporte eletromecânico a maquinários de grande porte."
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Facilities & Hard Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Manutenção Predial",
+                    "description": "Manutenção técnica contínua para conservação, segurança estrutural e pleno funcionamento das edificações industriais e comerciais."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sistemas de Ar Condicionado (HVAC)",
+                    "description": "Manutenção preventiva, preditiva e corretiva em climatização para conforto térmico, qualidade do ar e conformidade com o PMOC."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Serviços Elétricos Contínuos",
+                    "description": "Atendimento elétrico residente ou volante para demandas preventivas e corretivas contínuas na rotina da sua empresa."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Manutenção Técnica de Infraestrutura",
+                    "description": "Cuidado especializado com os ativos críticos que sustentam o funcionamento das operações industriais e administrativas."
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Facilities com Foco em Hard Services",
+                    "description": "Gestão técnica integrada de manutenção física, prevenindo paradas indesejadas e garantindo conformidade com normas regulamentadoras."
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Caminhão Munck",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Serviços com Caminhão Munck",
+                    "description": "Içamento e movimentação de postes, transformadores, painéis, máquinas e estruturas metálicas com caminhão Munck próprio, cesto para guindaste, broca perfuratriz hidráulica e operadores certificados (NR-10, NR-11 e NR-35)."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://eletricasabia.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual é a abrangência geográfica de atendimento da Elétrica Sabiá?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Com sede estratégica em Matão/SP, atendemos indústrias, comércios e cooperativas em todo o interior do Estado de São Paulo e regiões adjacentes, com equipe própria e estrutura logística preparada para atuar em projetos programados ou intervenções emergenciais."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Os serviços elétricos e manutenções acompanham emissão de ART e laudos técnicos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Todos os projetos de engenharia, instalações elétricas industriais, adequações de SPDA, montagens de subestações e laudos termográficos contam com emissão de Anotação de Responsabilidade Técnica (ART) por engenheiros habilitados, garantindo total conformidade com a ABNT e as NRs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funcionam os contratos de Facilities e gestão de Hard Services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Elaboramos propostas personalizadas para a realidade de cada empresa, oferecendo modelos com equipe residente (dedicada em tempo integral na sua planta) ou equipe volante para rondas preventivas, PMOC de climatização/ar condicionado, manutenção predial e elétrica contínua com indicadores e SLA definido."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O serviço com Caminhão Munck inclui operador qualificado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. A Elétrica Sabiá fornece o caminhão Munck próprio acompanhado de operadores especializados e certificados nas normas de segurança NR-10, NR-11 e NR-35, garantindo rigor absoluto no içamento e movimentação de postes, transformadores, painéis e máquinas pesadas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como solicitar uma proposta comercial ou visita técnica?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Basta preencher o formulário abaixo ou clicar diretamente no botão flutuante de WhatsApp. Nossa equipe técnica entrará em contato prontamente para entender o escopo do seu projeto e agendar uma visita técnica sem compromisso."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
   <!-- ==========================================
        HEADER (NAVIGATION)
@@ -40,18 +412,18 @@
   <header class="header">
     <div class="container header-container">
       <a href="#inicio" class="logo-link" aria-label="Elétrica Sabiá - Ir para início">
-        <img src="assets/logo/logo.png" alt="Elétrica Sabiá - Instalações Elétricas e Facilities" class="logo-img">
+        <picture><source srcset="assets/logo/logo.webp" type="image/webp"><img src="assets/logo/logo.png" alt="Elétrica Sabiá - Instalações Elétricas e Facilities em Matão-SP" class="logo-img" width="574" height="182" fetchpriority="high"></picture>
       </a>
       
       <!-- Mobile Hamburger Toggle Button -->
-      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu de navegação">
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu de navegação">
         <span></span>
         <span></span>
         <span></span>
       </button>
       
       <!-- Navigation Menu -->
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Menu principal">
         <ul class="nav-list">
           <li><a href="#inicio" class="nav-link active">Início</a></li>
           <li><a href="#sobre" class="nav-link">Sobre</a></li>
@@ -68,7 +440,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- ==========================================
          HERO SECTION
          ========================================== -->
@@ -77,7 +449,7 @@
       <div class="container">
         <div class="hero-content reveal">
           <div class="hero-badge">
-            <i class="fa-solid fa-bolt"></i> Tradição Desde 1997 • Matão, SP
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i> Tradição Desde 1997 • Matão, SP
           </div>
           <h1>Soluções em <span class="highlight-blue">Engenharia Elétrica</span> & <span class="highlight-yellow">Facilities</span> Industriais</h1>
           <p class="hero-desc">
@@ -85,16 +457,16 @@
           </p>
           <div class="hero-actions">
             <a href="#contato" class="btn btn-accent">
-              <i class="fa-solid fa-file-signature"></i> Solicitar Orçamento
+              <i class="fa-solid fa-file-signature" aria-hidden="true"></i> Solicitar Orçamento
             </a>
             <a href="https://wa.me/551633847469" target="_blank" rel="noopener" class="btn btn-whatsapp">
-              <i class="fa-brands fa-whatsapp"></i> Falar pelo WhatsApp
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Falar pelo WhatsApp
             </a>
           </div>
 
           <div class="hero-trust-bar">
             <div class="trust-item">
-              <div class="trust-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="trust-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
               <div class="trust-text">
                 <h4>+25 Anos</h4>
                 <p>Solidez e experiência desde 1997</p>
@@ -102,7 +474,7 @@
             </div>
 
             <div class="trust-item">
-              <div class="trust-icon"><i class="fa-solid fa-gears"></i></div>
+              <div class="trust-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></div>
               <div class="trust-text">
                 <h4>Elétrica & Facilities</h4>
                 <p>Soluções técnicas completas</p>
@@ -110,7 +482,7 @@
             </div>
 
             <div class="trust-item">
-              <div class="trust-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+              <div class="trust-icon"><i class="fa-solid fa-truck-ramp-box" aria-hidden="true"></i></div>
               <div class="trust-text">
                 <h4>Caminhão Munck</h4>
                 <p>Equipamento e equipe própria</p>
@@ -118,7 +490,7 @@
             </div>
 
             <div class="trust-item">
-              <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div class="trust-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
               <div class="trust-text">
                 <h4>Segurança Risco 2</h4>
                 <p>Treinamentos em 7 NRs & EPIs</p>
@@ -150,7 +522,7 @@
 
             <div class="about-features">
               <div class="about-feature-item">
-                <div class="about-feature-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="about-feature-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
                 <div class="about-feature-text">
                   <h4>Projetos e Atendimento Customizados</h4>
                   <p>Soluções planejadas caso a caso de acordo com os requisitos e cronogramas de cada empresa.</p>
@@ -158,7 +530,7 @@
               </div>
 
               <div class="about-feature-item">
-                <div class="about-feature-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="about-feature-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
                 <div class="about-feature-text">
                   <h4>Engenharia e Manutenção Integrada</h4>
                   <p>Da baixa à alta tensão, infraestrutura predial, sistemas de ar condicionado e içamento técnico.</p>
@@ -166,7 +538,7 @@
               </div>
 
               <div class="about-feature-item">
-                <div class="about-feature-icon"><i class="fa-solid fa-check"></i></div>
+                <div class="about-feature-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
                 <div class="about-feature-text">
                   <h4>Rigor Normativo e Segurança Inegociável</h4>
                   <p>Equipe treinada nas principais NRs do setor e total conformidade com normas técnicas da ABNT.</p>
@@ -181,7 +553,7 @@
           </div>
 
           <div class="about-image-wrapper reveal">
-            <img src="assets/images/equipe_2.jpeg" alt="Equipe técnica da Elétrica Sabiá em sala de comando de painéis elétricos industriais" class="about-image">
+            <picture><source srcset="assets/images/equipe_2.webp" type="image/webp"><img src="assets/images/equipe_2.jpeg" alt="Equipe técnica da Elétrica Sabiá em sala de comando de painéis elétricos industriais" class="about-image" width="1280" height="721" loading="lazy" decoding="async"></picture>
             <div class="about-floating-card">
               <div class="floating-card-num">+25</div>
               <div class="floating-card-text">Anos de atuação no mercado com sólida reputação</div>
@@ -198,28 +570,28 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-card reveal">
-            <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="stat-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
             <div class="stat-number" data-target="1997">1997</div>
             <div class="stat-title">Fundação</div>
             <p class="stat-desc">Mais de duas décadas e meia de solidez no mercado técnico</p>
           </div>
 
           <div class="stat-card reveal">
-            <div class="stat-icon"><i class="fa-solid fa-cubes"></i></div>
+            <div class="stat-icon"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
             <div class="stat-number" data-target="2" data-suffix=" Áreas">2 Áreas</div>
             <div class="stat-title">Elétrica & Facilities</div>
             <p class="stat-desc">Portfólio expandido com foco em Hard Services e Munck</p>
           </div>
 
           <div class="stat-card reveal">
-            <div class="stat-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="stat-icon"><i class="fa-solid fa-user-shield" aria-hidden="true"></i></div>
             <div class="stat-number" data-target="7" data-suffix=" NRs">7 NRs</div>
             <div class="stat-title">Treinamentos</div>
             <p class="stat-desc">NR10, NR33, NR35, NR06, NR34, NR18 e NR20</p>
           </div>
 
           <div class="stat-card reveal">
-            <div class="stat-icon"><i class="fa-solid fa-vest-patches"></i></div>
+            <div class="stat-icon"><i class="fa-solid fa-vest-patches" aria-hidden="true"></i></div>
             <div class="stat-number" data-target="2" data-prefix="Risco ">Risco 2</div>
             <div class="stat-title">Proteção EPI</div>
             <p class="stat-desc">Uniformes e equipamentos homologados para proteção integral</p>
@@ -243,21 +615,21 @@
 
         <!-- Interactive Category Filter Tabs -->
         <div class="service-filter-wrapper reveal">
-          <div class="service-filter-tabs">
-            <button class="filter-tab active" data-filter="all">
-              <i class="fa-solid fa-layer-group"></i> Todos os Serviços
+          <div class="service-filter-tabs" role="group" aria-label="Filtrar serviços elétricos por categoria">
+            <button type="button" class="filter-tab active" aria-pressed="true" data-filter="all">
+              <i class="fa-solid fa-layer-group" aria-hidden="true"></i> Todos os Serviços
             </button>
-            <button class="filter-tab" data-filter="instalacoes">
-              <i class="fa-solid fa-industry"></i> Instalações & Redes
+            <button type="button" class="filter-tab" aria-pressed="false" data-filter="instalacoes">
+              <i class="fa-solid fa-industry" aria-hidden="true"></i> Instalações & Redes
             </button>
-            <button class="filter-tab" data-filter="manutencao">
-              <i class="fa-solid fa-wrench"></i> Manutenção & Tensão
+            <button type="button" class="filter-tab" aria-pressed="false" data-filter="manutencao">
+              <i class="fa-solid fa-wrench" aria-hidden="true"></i> Manutenção & Tensão
             </button>
-            <button class="filter-tab" data-filter="automacao">
-              <i class="fa-solid fa-microchip"></i> Automação & SPDA
+            <button type="button" class="filter-tab" aria-pressed="false" data-filter="automacao">
+              <i class="fa-solid fa-microchip" aria-hidden="true"></i> Automação & SPDA
             </button>
-            <button class="filter-tab" data-filter="montagens">
-              <i class="fa-solid fa-gears"></i> Montagens
+            <button type="button" class="filter-tab" aria-pressed="false" data-filter="montagens">
+              <i class="fa-solid fa-gears" aria-hidden="true"></i> Montagens
             </button>
           </div>
         </div>
@@ -266,132 +638,132 @@
           <!-- Card 1 -->
           <article class="service-card reveal" data-category="instalacoes">
             <div class="service-icon-box">
-              <i class="fa-solid fa-industry"></i>
+              <i class="fa-solid fa-industry" aria-hidden="true"></i>
             </div>
             <h3>Instalações Elétricas Industriais e Comerciais</h3>
             <p>Execução completa de instalações e montagem de sistemas elétricos de alto desempenho para indústrias, galpões e edifícios corporativos.</p>
             <a href="#contato" class="service-btn" data-service="Instalações elétricas industriais e comerciais">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 2 -->
           <article class="service-card reveal" data-category="automacao">
             <div class="service-icon-box">
-              <i class="fa-solid fa-microchip"></i>
+              <i class="fa-solid fa-microchip" aria-hidden="true"></i>
             </div>
             <h3>Instalação de Sistemas de Automação Industrial</h3>
             <p>Implantação de sistemas de automação, painéis de controle, PLCs e processos inteligentes para otimização de linhas produtivas.</p>
             <a href="#contato" class="service-btn" data-service="Instalação de sistemas de automação industrial">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 3 -->
           <article class="service-card reveal" data-category="instalacoes">
             <div class="service-icon-box">
-              <i class="fa-solid fa-network-wired"></i>
+              <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
             </div>
             <h3>Instalação de Redes de Dados</h3>
             <p>Montagem de infraestrutura para cabeamento estruturado, fibra óptica e redes de comunicação corporativa de alta velocidade.</p>
             <a href="#contato" class="service-btn" data-service="Instalação de redes de dados">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 4 -->
           <article class="service-card reveal" data-category="automacao">
             <div class="service-icon-box">
-              <i class="fa-solid fa-cloud-bolt"></i>
+              <i class="fa-solid fa-cloud-bolt" aria-hidden="true"></i>
             </div>
             <h3>Sistemas de Proteção contra Descargas Atmosféricas (SPDA)</h3>
             <p>Projeto, laudos, instalação e manutenção de para-raios e malhas de aterramento para proteção patrimonial e humana conforme a NBR 5419.</p>
             <a href="#contato" class="service-btn" data-service="Instalação de sistemas de proteção contra descargas atmosféricas">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 5 -->
           <article class="service-card reveal" data-category="instalacoes">
             <div class="service-icon-box">
-              <i class="fa-solid fa-charging-station"></i>
+              <i class="fa-solid fa-charging-station" aria-hidden="true"></i>
             </div>
             <h3>Instalações de Subestações de Transformação</h3>
             <p>Montagem, infraestrutura civil/eletromecânica, adequações e manutenções periódicas em subestações de transformação de energia.</p>
             <a href="#contato" class="service-btn" data-service="Instalações de subestações de transformação">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 6 -->
           <article class="service-card reveal" data-category="manutencao">
             <div class="service-icon-box">
-              <i class="fa-solid fa-gauge-high"></i>
+              <i class="fa-solid fa-gauge-high" aria-hidden="true"></i>
             </div>
             <h3>Banco de Capacitores para Correção de Fator de Potência</h3>
             <p>Dimensionamento, montagem e manutenção de bancos automáticos de capacitores para redução de custos e eliminação de multas na fatura.</p>
             <a href="#contato" class="service-btn" data-service="Instalações de banco de capacitores para correção de fator de potência">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 7 -->
           <article class="service-card reveal" data-category="automacao">
             <div class="service-icon-box">
-              <i class="fa-solid fa-sliders"></i>
+              <i class="fa-solid fa-sliders" aria-hidden="true"></i>
             </div>
             <h3>Instrumentação e Controle de Processos</h3>
             <p>Instalação, calibração e assistência em sensores, transmissores e instrumentos de medição para processos contínuos industriais.</p>
             <a href="#contato" class="service-btn" data-service="Instrumentação">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 8 -->
           <article class="service-card reveal" data-category="manutencao">
             <div class="service-icon-box">
-              <i class="fa-solid fa-wrench"></i>
+              <i class="fa-solid fa-wrench" aria-hidden="true"></i>
             </div>
             <h3>Manutenção Elétrica Industrial e Comercial</h3>
             <p>Planos preventivos, preditivos e intervenções corretivas emergenciais para garantir a continuidade operacional das instalações.</p>
             <a href="#contato" class="service-btn" data-service="Manutenção elétrica industrial e comercial">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 9 -->
           <article class="service-card reveal" data-category="manutencao">
             <div class="service-icon-box">
-              <i class="fa-solid fa-bolt-lightning"></i>
+              <i class="fa-solid fa-bolt-lightning" aria-hidden="true"></i>
             </div>
             <h3>Manutenção em Sistemas de Baixa, Média e Alta Tensão</h3>
             <p>Corpo técnico especializado em diagnósticos termográficos, testes de isolamento e reparos em redes de baixa, média e alta tensão.</p>
             <a href="#contato" class="service-btn" data-service="Manutenção em sistemas elétricos de baixa, média e alta tensão">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 10 -->
           <article class="service-card reveal" data-category="montagens">
             <div class="service-icon-box">
-              <i class="fa-solid fa-tower-cell"></i>
+              <i class="fa-solid fa-tower-cell" aria-hidden="true"></i>
             </div>
             <h3>Montagens de Redes Elétricas de Baixa e Média Tensão</h3>
             <p>Construção, expansão e remanejamento de redes elétricas aéreas e subterrâneas com postes, cruzetas, transformadores e cabeamento.</p>
             <a href="#contato" class="service-btn" data-service="Montagens de redes elétricas de baixa e média tensão">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Card 11 -->
           <article class="service-card reveal" data-category="montagens">
             <div class="service-icon-box">
-              <i class="fa-solid fa-gears"></i>
+              <i class="fa-solid fa-gears" aria-hidden="true"></i>
             </div>
             <h3>Montagens Eletromecânicas em Geral</h3>
             <p>Estruturação de eletrocalhas, perfilados, leitos para cabos, tubulações industriais e suporte eletromecânico a maquinários de grande porte.</p>
             <a href="#contato" class="service-btn" data-service="Montagens eletromecânicas em geral">
-              Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Orçamento <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
         </div>
@@ -421,15 +793,15 @@
           </div>
           <div class="facilities-intro-badges">
             <div class="facility-badge-item">
-              <i class="fa-solid fa-shield-halved"></i>
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
               <span>Foco Especializado em Hard Services</span>
             </div>
             <div class="facility-badge-item">
-              <i class="fa-solid fa-user-gear"></i>
+              <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
               <span>Mão de Obra Técnica Própria</span>
             </div>
             <div class="facility-badge-item">
-              <i class="fa-solid fa-clipboard-check"></i>
+              <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
               <span>Gestão Preventiva e Corretiva com SLA</span>
             </div>
           </div>
@@ -440,103 +812,103 @@
           <!-- Facility 1 -->
           <article class="facility-card reveal">
             <div class="facility-icon-wrap">
-              <i class="fa-solid fa-building-circle-check"></i>
+              <i class="fa-solid fa-building-circle-check" aria-hidden="true"></i>
             </div>
             <h3>Manutenção Predial</h3>
             <p>Manutenção técnica contínua para conservação, segurança estrutural e pleno funcionamento das edificações industriais e comerciais.</p>
             <ul class="facility-list">
-              <li><i class="fa-solid fa-circle-check"></i> Reparos civis e conservação estrutural</li>
-              <li><i class="fa-solid fa-circle-check"></i> Redes hidráulicas e sistemas hidrossanitários</li>
-              <li><i class="fa-solid fa-circle-check"></i> Serralheria, pintura e acabamentos técnicos</li>
-              <li><i class="fa-solid fa-circle-check"></i> Manutenção de coberturas e calhas</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Reparos civis e conservação estrutural</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Redes hidráulicas e sistemas hidrossanitários</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Serralheria, pintura e acabamentos técnicos</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Manutenção de coberturas e calhas</li>
             </ul>
             <a href="#contato" class="service-btn" data-service="Manutenção Predial (Facilities)">
-              Solicitar Proposta <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Proposta <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Facility 2 -->
           <article class="facility-card reveal">
             <div class="facility-icon-wrap">
-              <i class="fa-solid fa-fan"></i>
+              <i class="fa-solid fa-fan" aria-hidden="true"></i>
             </div>
             <h3>Sistemas de Ar Condicionado (HVAC)</h3>
             <p>Manutenção preventiva, preditiva e corretiva em climatização para conforto térmico, qualidade do ar e conformidade com o PMOC.</p>
             <ul class="facility-list">
-              <li><i class="fa-solid fa-circle-check"></i> Execução e acompanhamento de PMOC</li>
-              <li><i class="fa-solid fa-circle-check"></i> Splits, VRF, Chillers e Centrais de Ar</li>
-              <li><i class="fa-solid fa-circle-check"></i> Higienização técnica e troca de filtros</li>
-              <li><i class="fa-solid fa-circle-check"></i> Eficiência energética em climatização</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Execução e acompanhamento de PMOC</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Splits, VRF, Chillers e Centrais de Ar</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Higienização técnica e troca de filtros</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Eficiência energética em climatização</li>
             </ul>
             <a href="#contato" class="service-btn" data-service="Manutenção de Ar Condicionado e PMOC (Facilities)">
-              Solicitar Proposta <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Proposta <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Facility 3 -->
           <article class="facility-card reveal">
             <div class="facility-icon-wrap">
-              <i class="fa-solid fa-plug-circle-bolt"></i>
+              <i class="fa-solid fa-plug-circle-bolt" aria-hidden="true"></i>
             </div>
             <h3>Serviços Elétricos Contínuos</h3>
             <p>Atendimento elétrico residente ou volante para demandas preventivas e corretivas contínuas na rotina da sua empresa.</p>
             <ul class="facility-list">
-              <li><i class="fa-solid fa-circle-check"></i> Quadros de distribuição e circuitos</li>
-              <li><i class="fa-solid fa-circle-check"></i> Sistemas de iluminação corporativa e LED</li>
-              <li><i class="fa-solid fa-circle-check"></i> Tomadas de uso geral e específico</li>
-              <li><i class="fa-solid fa-circle-check"></i> Resolução ágil de falhas elétricas</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Quadros de distribuição e circuitos</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Sistemas de iluminação corporativa e LED</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tomadas de uso geral e específico</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Resolução ágil de falhas elétricas</li>
             </ul>
             <a href="#contato" class="service-btn" data-service="Serviços Elétricos de Facilities">
-              Solicitar Proposta <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Proposta <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Facility 4 -->
           <article class="facility-card reveal">
             <div class="facility-icon-wrap">
-              <i class="fa-solid fa-server"></i>
+              <i class="fa-solid fa-server" aria-hidden="true"></i>
             </div>
             <h3>Manutenção Técnica de Infraestrutura</h3>
             <p>Cuidado especializado com os ativos críticos que sustentam o funcionamento das operações industriais e administrativas.</p>
             <ul class="facility-list">
-              <li><i class="fa-solid fa-circle-check"></i> Grupos geradores e no-breaks (UPS)</li>
-              <li><i class="fa-solid fa-circle-check"></i> Sistemas de bombeamento e pressurização</li>
-              <li><i class="fa-solid fa-circle-check"></i> Infraestrutura para salas de servidores / CPD</li>
-              <li><i class="fa-solid fa-circle-check"></i> Inspeções técnicas periódicas</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Grupos geradores e no-breaks (UPS)</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Sistemas de bombeamento e pressurização</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Infraestrutura para salas de servidores / CPD</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Inspeções técnicas periódicas</li>
             </ul>
             <a href="#contato" class="service-btn" data-service="Manutenção Técnica de Infraestrutura (Facilities)">
-              Solicitar Proposta <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Proposta <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Facility 5 -->
           <article class="facility-card reveal">
             <div class="facility-icon-wrap">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
+              <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
             </div>
             <h3>Facilities com Foco em Hard Services</h3>
             <p>Gestão técnica integrada de manutenção física, prevenindo paradas indesejadas e garantindo conformidade com normas regulamentadoras.</p>
             <ul class="facility-list">
-              <li><i class="fa-solid fa-circle-check"></i> Contratos customizados por demanda ou dedicação</li>
-              <li><i class="fa-solid fa-circle-check"></i> Relatórios técnicos e indicadores de desempenho</li>
-              <li><i class="fa-solid fa-circle-check"></i> Equipe treinada em segurança e NRs</li>
-              <li><i class="fa-solid fa-circle-check"></i> Suporte técnico especializado</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Contratos customizados por demanda ou dedicação</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Relatórios técnicos e indicadores de desempenho</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Equipe treinada em segurança e NRs</li>
+              <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Suporte técnico especializado</li>
             </ul>
             <a href="#contato" class="service-btn" data-service="Gestão de Hard Services (Facilities)">
-              Solicitar Proposta <i class="fa-solid fa-chevron-right"></i>
+              Solicitar Proposta <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
             </a>
           </article>
 
           <!-- Facility 6 / Card Destaque CTA -->
           <article class="facility-card reveal" style="background: linear-gradient(135deg, var(--color-sabia-blue-light) 0%, #FFFFFF 100%); border-color: rgba(0, 86, 179, 0.3);">
             <div class="facility-icon-wrap" style="background-color: var(--color-sabia-blue); color: var(--color-white);">
-              <i class="fa-solid fa-handshake-angle"></i>
+              <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
             </div>
             <h3>Contratos Personalizados</h3>
             <p>Desenvolvemos planos de Facilities sob medida para o porte e as necessidades da sua empresa, combinando elétrica, ar condicionado e manutenção civil.</p>
             <div style="margin-top: auto; padding-top: 16px;">
               <a href="#contato" class="btn btn-primary" style="width: 100%; font-size: 0.825rem; padding: 12px 18px;">
-                <i class="fa-solid fa-calculator"></i> Orçar Contrato de Facilities
+                <i class="fa-solid fa-calculator" aria-hidden="true"></i> Orçar Contrato de Facilities
               </a>
             </div>
           </article>
@@ -563,14 +935,14 @@
             <!-- Equipamentos Inclusos -->
             <div class="safety-highlights" style="margin-top: 1.5rem; margin-bottom: 0.25rem;">
               <div class="safety-item">
-                <div class="safety-icon"><i class="fa-solid fa-person-shelter"></i></div>
+                <div class="safety-icon"><i class="fa-solid fa-person-shelter" aria-hidden="true"></i></div>
                 <div class="safety-text">
                   <h4>Cesto para Guindaste</h4>
                   <p>Plataforma aérea homologada para trabalho em altura com segurança NR-35.</p>
                 </div>
               </div>
               <div class="safety-item">
-                <div class="safety-icon"><i class="fa-solid fa-circle-dot"></i></div>
+                <div class="safety-icon"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i></div>
                 <div class="safety-text">
                   <h4>Broca Perfuratriz Hidráulica</h4>
                   <p>Perfuração de solo para fixação de postes e estruturas com alta precisão.</p>
@@ -580,7 +952,7 @@
 
             <div class="munck-features">
               <div class="munck-feature-box">
-                <div class="munck-feature-icon"><i class="fa-solid fa-truck"></i></div>
+                <div class="munck-feature-icon"><i class="fa-solid fa-truck" aria-hidden="true"></i></div>
                 <div class="munck-feature-text">
                   <h4>Caminhão Próprio e Moderno</h4>
                   <p>Veículo equipado com guindauto articulado robusto e revisado periodicamente.</p>
@@ -588,7 +960,7 @@
               </div>
 
               <div class="munck-feature-box">
-                <div class="munck-feature-icon"><i class="fa-solid fa-id-badge"></i></div>
+                <div class="munck-feature-icon"><i class="fa-solid fa-id-badge" aria-hidden="true"></i></div>
                 <div class="munck-feature-text">
                   <h4>Operadores Certificados</h4>
                   <p>Profissionais qualificados com capacitações em NR-10, NR-11 e NR-35.</p>
@@ -596,7 +968,7 @@
               </div>
 
               <div class="munck-feature-box">
-                <div class="munck-feature-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+                <div class="munck-feature-icon"><i class="fa-solid fa-weight-hanging" aria-hidden="true"></i></div>
                 <div class="munck-feature-text">
                   <h4>Içamento & Movimentação</h4>
                   <p>Elevação de postes, transformadores, painéis, máquinas e estruturas metálicas.</p>
@@ -604,7 +976,7 @@
               </div>
 
               <div class="munck-feature-box">
-                <div class="munck-feature-icon"><i class="fa-solid fa-clock"></i></div>
+                <div class="munck-feature-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
                 <div class="munck-feature-text">
                   <h4>Disponibilidade Regional</h4>
                   <p>Atendimento ágil para indústrias, comércios e obras em Matão e toda a região.</p>
@@ -614,10 +986,10 @@
 
             <div style="display: flex; gap: 14px; flex-wrap: wrap;">
               <a href="#contato" class="btn btn-primary" data-service="Serviços com Caminhão Munck">
-                <i class="fa-solid fa-truck-ramp-box"></i> Solicitar Orçamento de Munck
+                <i class="fa-solid fa-truck-ramp-box" aria-hidden="true"></i> Solicitar Orçamento de Munck
               </a>
               <a href="https://wa.me/551633847469?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20com%20caminh%C3%A3o%20Munck" target="_blank" rel="noopener" class="btn btn-whatsapp">
-                <i class="fa-brands fa-whatsapp"></i> Falar via WhatsApp
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Falar via WhatsApp
               </a>
             </div>
           </div>
@@ -625,19 +997,19 @@
           <div class="munck-media-wrapper reveal">
             <!-- Imagem Principal: Caminhão Munck com logotipo da Elétrica Sabiá -->
             <div class="munck-main-image-box">
-              <img src="assets/images/caminhao_2.png" alt="Caminhão Munck da Elétrica Sabiá em operação com cesto para guindaste e técnico realizando serviço em altura" class="munck-main-img">
-              <span class="munck-tag"><i class="fa-solid fa-check"></i> Frota Própria Elétrica Sabiá</span>
+              <picture><source srcset="assets/images/caminhao_2.webp" type="image/webp"><img src="assets/images/caminhao_2.jpg" alt="Caminhão Munck da Elétrica Sabiá em operação com cesto para guindaste e técnico realizando serviço em altura" class="munck-main-img" width="1280" height="960" loading="lazy" decoding="async"></picture>
+              <span class="munck-tag"><i class="fa-solid fa-check" aria-hidden="true"></i> Frota Própria Elétrica Sabiá</span>
             </div>
 
             <!-- Imagens Secundárias: Operações Reais de Construção e Infraestrutura -->
             <div class="munck-secondary-images">
               <div class="munck-thumb-box">
-                <img src="assets/images/construcao_4.jpeg" alt="Operação com guindauto Munck e plataforma elevatória em estrutura industrial" class="munck-thumb-img">
-                <span class="munck-tag"><i class="fa-solid fa-helmet-safety"></i> Montagem Industrial</span>
+                <picture><source srcset="assets/images/construcao_4.webp" type="image/webp"><img src="assets/images/construcao_4.jpeg" alt="Operação com guindauto Munck e plataforma elevatória em estrutura industrial" class="munck-thumb-img" width="1024" height="768" loading="lazy" decoding="async"></picture>
+                <span class="munck-tag"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i> Montagem Industrial</span>
               </div>
               <div class="munck-thumb-box">
-                <img src="assets/images/rua.jpeg" alt="Operação técnica de infraestrutura elétrica com plataforma aérea em via industrial" class="munck-thumb-img">
-                <span class="munck-tag"><i class="fa-solid fa-bolt"></i> Manutenção em Altura</span>
+                <picture><source srcset="assets/images/rua.webp" type="image/webp"><img src="assets/images/rua.jpeg" alt="Operação técnica de infraestrutura elétrica com plataforma aérea em via industrial" class="munck-thumb-img" width="1024" height="768" loading="lazy" decoding="async"></picture>
+                <span class="munck-tag"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Manutenção em Altura</span>
               </div>
             </div>
           </div>
@@ -666,7 +1038,7 @@
 
             <div class="safety-highlights">
               <div class="safety-item">
-                <div class="safety-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                <div class="safety-icon"><i class="fa-solid fa-shield-virus" aria-hidden="true"></i></div>
                 <div class="safety-text">
                   <h4>Normas ABNT & Procedimentos Padronizados</h4>
                   <p>Cumprimento estrito de procedimentos operacionais seguros com foco em zero acidentes.</p>
@@ -674,7 +1046,7 @@
               </div>
 
               <div class="safety-item">
-                <div class="safety-icon"><i class="fa-solid fa-vest-patches"></i></div>
+                <div class="safety-icon"><i class="fa-solid fa-vest-patches" aria-hidden="true"></i></div>
                 <div class="safety-text">
                   <h4>Uniformes Risco 2 & EPIs Homologados</h4>
                   <p>Equipamentos de proteção individual e vestimentas anti-chama testados e certificados.</p>
@@ -736,37 +1108,37 @@
         <div class="clients-grid reveal">
           <!-- Longping High-Tech -->
           <div class="client-card">
-            <img src="assets/logos/longping.png" alt="Logo Longping High-Tech CITIC Group" class="client-logo">
+            <picture><source srcset="assets/logos/longping.webp" type="image/webp"><img src="assets/logos/longping.png" alt="Logo Longping High-Tech CITIC Group" class="client-logo" width="252" height="86" loading="lazy" decoding="async"></picture>
             <span class="client-name">Longping High-Tech</span>
           </div>
 
           <!-- Citrosuco -->
           <div class="client-card">
-            <img src="assets/logos/citrosuco.png" alt="Logo Citrosuco" class="client-logo">
+            <picture><source srcset="assets/logos/citrosuco.webp" type="image/webp"><img src="assets/logos/citrosuco.png" alt="Logo Citrosuco" class="client-logo" width="860" height="203" loading="lazy" decoding="async"></picture>
             <span class="client-name">Citrosuco</span>
           </div>
 
           <!-- Dow AgroSciences -->
           <div class="client-card">
-            <img src="assets/logos/dow.png" alt="Logo Dow AgroSciences" class="client-logo">
+            <picture><source srcset="assets/logos/dow.webp" type="image/webp"><img src="assets/logos/dow.png" alt="Logo Dow AgroSciences" class="client-logo" width="320" height="320" loading="lazy" decoding="async"></picture>
             <span class="client-name">Dow AgroSciences</span>
           </div>
 
           <!-- Corteva Agriscience -->
           <div class="client-card">
-            <img src="assets/logos/corteva.png" alt="Logo Corteva Agriscience" class="client-logo">
+            <picture><source srcset="assets/logos/corteva.webp" type="image/webp"><img src="assets/logos/corteva.png" alt="Logo Corteva Agriscience" class="client-logo" width="1024" height="211" loading="lazy" decoding="async"></picture>
             <span class="client-name">Corteva Agriscience</span>
           </div>
 
           <!-- Droga Raia (Novo cliente adicionado) -->
           <div class="client-card">
-            <img src="assets/logos/raia.png" alt="Logo Droga Raia" class="client-logo">
+            <picture><source srcset="assets/logos/raia.webp" type="image/webp"><img src="assets/logos/raia.png" alt="Logo Droga Raia" class="client-logo" width="600" height="376" loading="lazy" decoding="async"></picture>
             <span class="client-name">Droga Raia</span>
           </div>
 
           <!-- Frigorífico Terral -->
           <div class="client-card">
-            <img src="assets/logos/terral.png" alt="Logo Frigorífico Terral" class="client-logo">
+            <picture><source srcset="assets/logos/terral.webp" type="image/webp"><img src="assets/logos/terral.png" alt="Logo Frigorífico Terral" class="client-logo" width="600" height="150" loading="lazy" decoding="async"></picture>
             <span class="client-name">Frigorífico Terral</span>
           </div>
         </div>
@@ -789,55 +1161,55 @@
         <div class="faq-accordion reveal">
           <!-- FAQ 1 -->
           <div class="faq-item">
-            <button class="faq-question">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-resposta-1" id="faq-pergunta-1">
               <span>Qual é a abrangência geográfica de atendimento da Elétrica Sabiá?</span>
-              <i class="fa-solid fa-chevron-down faq-icon"></i>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-resposta-1" role="region" aria-labelledby="faq-pergunta-1">
               <p>Com sede estratégica em Matão/SP, atendemos indústrias, comércios e cooperativas em todo o interior do Estado de São Paulo e regiões adjacentes, com equipe própria e estrutura logística preparada para atuar em projetos programados ou intervenções emergenciais.</p>
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="faq-item">
-            <button class="faq-question">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-resposta-2" id="faq-pergunta-2">
               <span>Os serviços elétricos e manutenções acompanham emissão de ART e laudos técnicos?</span>
-              <i class="fa-solid fa-chevron-down faq-icon"></i>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-resposta-2" role="region" aria-labelledby="faq-pergunta-2">
               <p>Sim. Todos os projetos de engenharia, instalações elétricas industriais, adequações de SPDA, montagens de subestações e laudos termográficos contam com emissão de Anotação de Responsabilidade Técnica (ART) por engenheiros habilitados, garantindo total conformidade com a ABNT e as NRs.</p>
             </div>
           </div>
 
           <!-- FAQ 3 -->
           <div class="faq-item">
-            <button class="faq-question">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-resposta-3" id="faq-pergunta-3">
               <span>Como funcionam os contratos de Facilities e gestão de Hard Services?</span>
-              <i class="fa-solid fa-chevron-down faq-icon"></i>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-resposta-3" role="region" aria-labelledby="faq-pergunta-3">
               <p>Elaboramos propostas personalizadas para a realidade de cada empresa, oferecendo modelos com equipe residente (dedicada em tempo integral na sua planta) ou equipe volante para rondas preventivas, PMOC de climatização/ar condicionado, manutenção predial e elétrica contínua com indicadores e SLA definido.</p>
             </div>
           </div>
 
           <!-- FAQ 4 -->
           <div class="faq-item">
-            <button class="faq-question">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-resposta-4" id="faq-pergunta-4">
               <span>O serviço com Caminhão Munck inclui operador qualificado?</span>
-              <i class="fa-solid fa-chevron-down faq-icon"></i>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-resposta-4" role="region" aria-labelledby="faq-pergunta-4">
               <p>Sim. A Elétrica Sabiá fornece o caminhão Munck próprio acompanhado de operadores especializados e certificados nas normas de segurança NR-10, NR-11 e NR-35, garantindo rigor absoluto no içamento e movimentação de postes, transformadores, painéis e máquinas pesadas.</p>
             </div>
           </div>
 
           <!-- FAQ 5 -->
           <div class="faq-item">
-            <button class="faq-question">
+            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-resposta-5" id="faq-pergunta-5">
               <span>Como solicitar uma proposta comercial ou visita técnica?</span>
-              <i class="fa-solid fa-chevron-down faq-icon"></i>
+              <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="faq-resposta-5" role="region" aria-labelledby="faq-pergunta-5">
               <p>Basta preencher o formulário abaixo ou clicar diretamente no botão flutuante de WhatsApp. Nossa equipe técnica entrará em contato prontamente para entender o escopo do seu projeto e agendar uma visita técnica sem compromisso.</p>
             </div>
           </div>
@@ -859,7 +1231,7 @@
         <div class="cta-buttons">
           <a href="#contato" class="btn btn-accent">Solicitar Orçamento</a>
           <a href="https://wa.me/551633847469" target="_blank" rel="noopener" class="btn btn-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp
           </a>
         </div>
       </div>
@@ -883,7 +1255,7 @@
               <!-- Telefone / WhatsApp -->
               <div class="contact-card-item">
                 <div class="contact-card-icon wa">
-                  <i class="fa-brands fa-whatsapp"></i>
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card-content">
                   <h4>Telefone / WhatsApp</h4>
@@ -894,7 +1266,7 @@
               <!-- E-mail -->
               <div class="contact-card-item">
                 <div class="contact-card-icon">
-                  <i class="fa-solid fa-envelope"></i>
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card-content">
                   <h4>E-mail Comercial</h4>
@@ -905,7 +1277,7 @@
               <!-- Endereço -->
               <div class="contact-card-item">
                 <div class="contact-card-icon">
-                  <i class="fa-solid fa-location-dot"></i>
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card-content">
                   <h4>Endereço Oficial</h4>
@@ -922,7 +1294,7 @@
             <div class="social-bar">
               <span class="social-title">Redes Sociais:</span>
               <a href="https://www.facebook.com/S%C3%A1bia-El%C3%A9trica-e-Loca%C3%A7%C3%A3o-de-Guindauto-Mat%C3%A3oSP" target="_blank" rel="noopener" class="social-btn" aria-label="Acessar o Facebook da Elétrica Sabiá">
-                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
               </a>
             </div>
           </div>
@@ -935,27 +1307,27 @@
             <form id="contactForm" class="contact-form" novalidate>
               <div class="form-group">
                 <label for="formName">Seu Nome *</label>
-                <input type="text" id="formName" class="form-control" placeholder="Digite seu nome completo" required>
+                <input type="text" id="formName" name="nome" autocomplete="name" class="form-control" placeholder="Digite seu nome completo" required>
               </div>
 
               <div class="form-group">
                 <label for="formPhone">Telefone / WhatsApp *</label>
-                <input type="tel" id="formPhone" class="form-control" placeholder="(16) 99999-9999" required>
+                <input type="tel" id="formPhone" name="telefone" autocomplete="tel" inputmode="tel" class="form-control" placeholder="(16) 99999-9999" required>
               </div>
 
               <div class="form-group">
                 <label for="formEmail">E-mail *</label>
-                <input type="email" id="formEmail" class="form-control" placeholder="seuemail@empresa.com.br" required>
+                <input type="email" id="formEmail" name="email" autocomplete="email" class="form-control" placeholder="seuemail@empresa.com.br" required>
               </div>
 
               <div class="form-group">
                 <label for="formCompany">Empresa</label>
-                <input type="text" id="formCompany" class="form-control" placeholder="Nome da sua empresa">
+                <input type="text" id="formCompany" name="empresa" autocomplete="organization" class="form-control" placeholder="Nome da sua empresa">
               </div>
 
               <div class="form-group full-width">
                 <label for="formService">Serviço de Interesse *</label>
-                <select id="formService" class="form-control" required>
+                <select id="formService" name="servico" class="form-control" required>
                   <option value="" disabled selected>Selecione um serviço...</option>
                   <optgroup label="Serviços Elétricos">
                     <option value="Instalações elétricas industriais e comerciais">Instalações elétricas industriais e comerciais</option>
@@ -988,7 +1360,7 @@
 
               <!-- Interactive Preset Chips -->
               <div class="form-chips-wrapper">
-                <span class="chips-label"><i class="fa-solid fa-wand-magic-sparkles"></i> Sugestões Rápidas de Mensagem:</span>
+                <span class="chips-label"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Sugestões Rápidas de Mensagem:</span>
                 <div class="form-chips">
                   <button type="button" class="chip-btn" data-preset="Gostaria de solicitar um orçamento detalhado para instalações elétricas na nossa unidade.">Instalações Elétricas</button>
                   <button type="button" class="chip-btn" data-preset="Gostaria de agendar uma visita técnica para proposta de contrato de Facilities e manutenção predial / ar condicionado.">Contrato de Facilities</button>
@@ -999,12 +1371,12 @@
 
               <div class="form-group full-width">
                 <label for="formMessage">Mensagem *</label>
-                <textarea id="formMessage" class="form-control" placeholder="Descreva brevemente sua necessidade ou escopo do projeto..." required></textarea>
+                <textarea id="formMessage" name="mensagem" class="form-control" placeholder="Descreva brevemente sua necessidade ou escopo do projeto..." required></textarea>
               </div>
 
               <div class="form-submit-wrapper">
                 <button type="submit" class="btn btn-whatsapp">
-                  <i class="fa-brands fa-whatsapp"></i> Enviar Mensagem via WhatsApp
+                  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Enviar Mensagem via WhatsApp
                 </button>
               </div>
             </form>
@@ -1021,13 +1393,13 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/logo/logo.png" alt="Elétrica Sabiá" class="logo-img">
+          <picture><source srcset="assets/logo/logo.webp" type="image/webp"><img src="assets/logo/logo.png" alt="Elétrica Sabiá" class="logo-img" width="574" height="182" loading="lazy" decoding="async"></picture>
           <p>
             Desde 1997 atuando com precisão técnica em instalações elétricas, Facilities (Hard Services) e operações com caminhão Munck. Compromisso absoluto com a segurança e a excelência.
           </p>
           <div class="social-bar">
-            <a href="https://www.facebook.com/S%C3%A1bia-El%C3%A9trica-e-Loca%C3%A7%C3%A3o-de-Guindauto-Mat%C3%A3oSP" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
+            <a href="https://www.facebook.com/S%C3%A1bia-El%C3%A9trica-e-Loca%C3%A7%C3%A3o-de-Guindauto-Mat%C3%A3oSP" target="_blank" rel="noopener" class="social-btn" aria-label="Acessar o Facebook da Elétrica Sabiá">
+              <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -1064,19 +1436,19 @@
           <h3>Contato Oficial</h3>
           <div class="footer-contact-list">
             <div class="footer-contact-item">
-              <i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
               <p><a href="https://wa.me/551633847469" target="_blank" rel="noopener">(16) 3384-7469</a></p>
             </div>
             <div class="footer-contact-item">
-              <i class="fa-solid fa-phone"></i>
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
               <p><a href="tel:+551633847469">(16) 3384-7469</a></p>
             </div>
             <div class="footer-contact-item">
-              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               <p><a href="mailto:eletricasabia@eletricasabia.com.br">eletricasabia@eletricasabia.com.br</a></p>
             </div>
             <div class="footer-contact-item">
-              <i class="fa-solid fa-location-dot"></i>
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               <p>Avenida José Schiavetto, 180 - Matão/SP - CEP 15991-416</p>
             </div>
           </div>
@@ -1093,16 +1465,16 @@
        FLOATING BUTTONS (WHATSAPP & BACK TO TOP)
        ========================================== -->
   <!-- Back to Top Button -->
-  <button id="backToTop" class="back-to-top" aria-label="Voltar ao início da página">
-    <i class="fa-solid fa-arrow-up"></i>
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Voltar ao início da página">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
   </button>
 
   <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/551633847469" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Abrir conversa no WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
   </a>
 
   <!-- Main JavaScript File -->
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

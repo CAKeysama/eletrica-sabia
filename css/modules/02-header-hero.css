@@ -123,7 +123,8 @@
   min-height: 100dvh;
   display: flex;
   align-items: center;
-  background: url('../assets/images/hero-bg.png') no-repeat center center/cover;
+  background: url('../../assets/images/hero-bg.jpg') no-repeat center center/cover;
+  background-image: image-set(url('../../assets/images/hero-bg.webp') type('image/webp'), url('../../assets/images/hero-bg.jpg') type('image/jpeg'));
   padding-top: 135px;
   padding-bottom: 90px;
 }
