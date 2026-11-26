@@ -202,8 +202,12 @@ function initServiceFilters() {
   filterTabs.forEach(tab => {
     tab.addEventListener('click', () => {
       // Remove active from all tabs
-      filterTabs.forEach(t => t.classList.remove('active'));
+      filterTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-pressed', 'false');
+      });
       tab.classList.add('active');
+      tab.setAttribute('aria-pressed', 'true');
 
       const filterValue = tab.getAttribute('data-filter');
 
@@ -244,6 +248,7 @@ function initFaqAccordion() {
       faqQuestions.forEach(q => {
         if (q !== question) {
           q.classList.remove('active');
+          q.setAttribute('aria-expanded', 'false');
           if (q.nextElementSibling) {
             q.nextElementSibling.classList.remove('open');
             q.nextElementSibling.style.maxHeight = null;
@@ -256,8 +261,10 @@ function initFaqAccordion() {
         question.classList.remove('active');
         answer.classList.remove('open');
         answer.style.maxHeight = null;
+        question.setAttribute('aria-expanded', 'false');
       } else {
         question.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
         answer.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 40 + 'px';
       }
